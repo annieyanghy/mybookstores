@@ -247,7 +247,7 @@ footer{
 footer #copy{
     /* grid-column: 2/3; */
     text-align: center;
-    color: var(--primary-color);
+    color: white;
     font-size: var(--normal-size);
 }
 
@@ -643,7 +643,7 @@ hr{
     }
     footer #copy{
         text-align: center;
-    color: var(--primary-color);
+    color: white;
     font-size: 0.8em;
     }
 
