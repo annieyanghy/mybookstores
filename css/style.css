@@ -1,19 +1,21 @@
 /* ------------design component---------------- */
 
 :root{
-    --primary-color: #f0e7e5;
-    --secondary-color:#4E4646;
-    --third-color: #b07060;
+    --primary-color: 240, 231, 229;
+    --secondary-color: 78, 70, 70;
+    --third-color: 176, 111, 94;
     --secondary-color_2: rgba(131, 119, 117, 0.5);
-    --font: 'IBM Plex Serif', serif;
+    --font: 'Playfair Display', serif;
     --header-footer-gap: 20px;
     --nav-size: 20px;
     --normal-size: 18px;
+    --button-font: 1.6rem;
     --item-margin-v: 5vh 0;
     --item_margin-v-small: 2vh 0;
-    --p-line-height: 1.2em;
-    --des-line-height: 1.8em;
-    --img-credit: 0.6em;
+    --p-line-height: 1.2rem;
+    --des-line-height: 1.8rem;
+    --img-credit: 0.6rem;
+    --color: 240, 240, 240;
 }
 
 
@@ -50,22 +52,25 @@ header{
     display: grid;
     grid-template-rows: 1fr;
     align-items: center;
-    /* background: var(--secondary-color); */
 
 }
 
 header nav{
     position: fixed;
+    z-index:100;
     width: 100%;
+    height: 6vh;
     top: 3vh;
     display: grid;
     grid-column-gap: var(--header-footer-gap);
     grid-template-columns: 1fr 1fr 1fr;
     align-self: center;
+
+
 }
 
 a{
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
 }
 nav ul{
     grid-column: 3/4;
@@ -75,9 +80,11 @@ nav ul{
 
 .nav_link{
     position: relative;
-    color: var(--secondary-color);
+    color: var(--secondary-color_2);
     text-decoration: none;
     font-size: var(--nav-size);
+    padding:5px;
+
     
 }
 .no_line{
@@ -87,22 +94,28 @@ nav ul{
 
 .nav_link:hover{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--primary-color),1);
     font-size: var(--nav-size);
-    text-decoration: underline var(--secondary-color);
+    /* text-decoration: underline var(--secondary-color); */
     /* text-underline-position: under; */
+    background: rgba(var(--third-color),0.4);
+    transition: .3s;
+    padding: 5px;
 }
 
 
-#current_page{
-    color: var(--secondary-color);
+
+
+ #current_page{
+    color: rgba(var(--primary-color));
     font-size: var(--nav-size);
     font-family: var(--font);
-    font-weight: bolders;
-    text-decoration: 10px underline var(--secondary-color);
-    text-underline-position: under;
-
-}
+    font-weight: bold;
+    /* text-decoration: 10px underline var(--secondary-color); */
+    /* text-underline-position: under; */
+    background: rgba(var(--third-color));
+    padding: 5px;
+} 
 
 
 
@@ -113,7 +126,7 @@ body{
     display: flex;
     flex-direction:column;
     flex-wrap: nowrap;
-    background-color: var(--primary-color);
+    background-color: rgba(var(--primary-color));
     position: relative;
     font-family: var(--font);
 }
@@ -129,50 +142,98 @@ main{
     position: relative;
     display: grid;
     grid-template-columns: 0.8fr 1.3fr;
+    grid-template-rows: auto auto;
     height: auto;
     width:100%;
+   
 
 }
 #landing_h1{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
+    grid-column: 1/2;
     font-size: 8em;
     line-height:1.6em;
     left: 8vw;
-    top: 20vh;
+    top: 10vh;
     z-index:10;
     font-family: var(--font);
     animation-name: color_change;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    letter-spacing: 0.5rem;
 }
 
 @keyframes color_change{
-    from {color: var(--secondary-color);}
-    to {color: var(--third-color);}
+    from {color: rgba(var(--secondary-color));}
+    to {color: rgba(var(--third-color));}
 }
 
 
 
 #landing_h1:hover{
-    text-shadow: 10px 10px  var(--secondary-color_2);
+    text-shadow: 10px 14px  var(--secondary-color_2);
 
 }
 
 
 #landing_pic{
     position: relative;
-    width: 80%;
+    width: 70%;
     height: auto;
-    top: 20vh;
+    top: 40vh;
     transform: rotate(-5deg);
+    grid-column: 2/3;
+    grid-row: 1/2;
+    box-shadow: 20px 20px  var(--secondary-color_2);
+
 }
 
 #landing_pic:hover{
     box-shadow: 20px 20px  var(--secondary-color_2);
 }
 
+#landing_pic_2{
+    position: relative;
+    width: 60%;
+    height: auto;
+    left: 30vw;
+    top: -4vh;
+    transform: rotate(5deg);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    box-shadow: 10px 20px  var(--secondary-color_2);
 
+}
+
+
+.v_text{
+    position: absolute;
+    display: block;
+    /* writing-mode: sideways-right;
+    text-orientation: mixed; */
+    transform: rotate(90deg);
+    font-size: var(--normal-size);
+    color: rgba(var(--third-color));
+    grid-row: 2/3;
+    grid-column: 1/2;
+    align-self: flex-start;
+    border-left: 2px solid;
+    padding-left: 10px;
+
+    
+    
+}
+
+/* .v_line{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border-left: 2px solid var(--secondary-color);
+    height: 400px;
+    margin-left: 50px;
+    z-index:100;
+
+} */
 
 
 /* ------------contact form---------------- */
@@ -185,7 +246,7 @@ form{
 
 .form_title{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     font-size: 2em;
     text-align:center;
     font-family: var(--font);
@@ -194,7 +255,7 @@ form{
 
 .form_label{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     font-size: var(--normal-size);
     text-align:left;
     font-family: var(--font);
@@ -203,44 +264,61 @@ form{
 }
 
 .form_button{
-    border: 2px solid var(--secondary-color);
-    background-color: var(--primary-color);
+    border: 2px solid rgba(var(--secondary-color));
+    background-color: rgba(var(--primary-color));
     width: 100px;
     text-align: center;
     align-self: center;
     border-radius: 5px;
     padding: 10px;
     font-size: 1em;
-    background-color: #f5f0ef;
+
+}
+
+.form_button:hover{
+    background-color: rgba(var(--secondary-color));
+    cursor: pointer;
+    color:#f5f0ef;
+
+
 
 }
 
 .form_input{
-    border: 2px solid var(--secondary-color);
+    border: 2px solid rgba(var(--secondary-color));
     height: 1.8em;
     background-color: #f5f0ef;
     border-radius: 5px;
     padding: 10px;
     font-size: 1em;
     font-family: var(--font);
+    
    
 }
 ::placeholder{
     color:var(--secondary-color_2);
 }
+.errormsg{
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    color: rgba(var(--third-color));
+    visibility: hidden;
 
+}
 /* ------------footer---------------- */
 footer{
     position: relative;
     display: grid;
     width: 100%;
-    height: 6vh;
+    height: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap:var(--header-footer-gap);
     bottom:0;
     margin-top:100px;
-    background:var(--secondary-color);
+    background: rgba(var(--third-color));
     padding-top:2vh;
+    padding-bottom:2vh;
     
  }
 
@@ -249,10 +327,29 @@ footer #copy{
     text-align: center;
     color: white;
     font-size: var(--normal-size);
+    grid-row: 2/3;
+    
 }
 
 
+footer a{
+    text-align: center;
+    color: white;
+    /* font-size: var(--normal-size); */
+    grid-row: 1/2;
+    margin: 5px 10px;
 
+}
+
+.social_icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    /* font-size: var(--normal-size); */
+    grid-row:1/2;
+
+}
 /* ------------filter---------------- */
 
 
@@ -271,7 +368,7 @@ footer #copy{
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-top:40px;
+    margin-top:100px;
 
 }
 
@@ -294,10 +391,7 @@ footer #copy{
     margin: 8vh;
     text-decoration: none;
 }
-.gallery_image>.bookstore_nar_filter:hover{
- background: var(--secondary-color_2);
- padding:2px;
-}
+
 
 
 .filter_image{
@@ -305,25 +399,30 @@ footer #copy{
     width: 60%;
     margin: 3vh;
     /* padding: 0 2vh; */
+    outline: 2px solid;
+    outline-offset: 3px;
+  
 
 }
 .filter_image:hover{
-    box-shadow: 10px 10px  var(--secondary-color_2);
+    box-shadow: 20px 20px  var(--secondary-color_2);
+    transition: 0.5s;
 }
 
 .page_title{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     font-size: 3.8em;
     text-align:center;
     font-family: var(--font);
     margin: var(--item-margin-v);
+    margin-top:200px;
 }
 
 .page_des{
     position: relative;
     color: var(--secondary-color);
-    font-size: 1.6em;
+    font-size: 1.2rem;
     text-align:center;
     width: 60vw;
     font-family: var(--font);
@@ -334,26 +433,181 @@ footer #copy{
 
 .bookstore_nar_filter{
     position: relative;
-    color: var(--secondary-color);
-    font-size: 1.2em;
+    color: rgba(var(--primary-color));
+    font-size: var(--button-font);
     font-weight: 600;
     text-align:center;
     font-family: var(--font);
     line-height: var(--p-line-height);
     margin: 10px 0;
+    /* outline: 2px solid;
+    outline-offset: 5px; */
+    background: var(--secondary-color_2);
+    padding: 10px;
    
 }
+.gallery_image>.bookstore_nar_filter:hover{
+    background: rgba(var(--secondary-color));
+    transition: 0.4s;
+   
+   }
+.gallery_title{
+    font-size:2.2rem;
+    font-weight: 800;
+    margin: 3vh auto;
+    margin-bottom: 40px;
+    background: rgba(var(--third-color),0.7);
+    padding: 3px;
+    color: rgba(var(--primary-color));
+}
+
+#down_arrow{
+    color: rgba(var(--secondary-color), 0.7);
+    margin: 5px;
+    animation: bounce infinite 2s;
+    font-size: 2rem;
+}
+
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100%{
+        transform: translateY(0);
+    }
+
+    40%{
+        transform: translateY(-10px);
+    }
+    60%{
+        transform: translateY(-1px);
+    }
+}
+
+.highlight{
+    background: var(--secondary-color_2);
+}
+/* ----world map--- */
+
+#map_block{
+    display: grid;
+    width: 100%;
+    position:relative;
+    
+}
+
+#worldmap{
+    width: 60%;
+    margin: auto;
+    opacity:0.7; 
+}
+
+#b_m{
+    margin-top:100px;
+}
+
+.point{
+    cursor: pointer;
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color:  rgba(var(--secondary-color));
+    opacity: 1;
+    border-radius: 100%;
+    transition: all .3s ease;
+    animation: pulse 5s infinite;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 0 var(--secondary-color_2);
+    align-items: center;
+    
+}
+
+.point:hover{
+    transform: scale(2.0);
+    border-radius: 5%;
+    width: auto;
+    height: 2rem;
+    opacity: 1;
+    animation: none;
+    box-shadow: 0 0 0 5px var(--secondary-color_2);
+    justify-content: center; 
+    transition: 0.5s;
+   
+}
+
+
+
+.paris{
+    display:grid;
+    top: 26%;
+    left:48%;
+    align-self: center;
+}
+.p_title{
+    margin-top: 0.2rem;
+    font-size: 0.4rem;
+    opacity: 0;
+    color: rgba(var(--primary-color));
+    display: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.p_title:hover{
+    opacity: 1; 
+    transition: 0.5s;
+    display: inline;
+}
+
+.loc{
+    margin-top:0;
+    font-size: 0.5rem;
+    opacity: 0;
+    color: rgba(var(--primary-color));
+    display: none;
+   
+}
+
+.loc:hover{
+    opacity: 1; 
+    transition: 0.5s;
+
+}
+.santorini{
+    display:grid;
+    top: 30%;
+    left:51%;
+}
+
+.tw{
+    display:grid;
+    top: 44%;
+    left:71.3%;
+
+}
+
+@keyframes pulse {
+    0% { 
+        box-shadow: 0 0 0 0 var(--secondary-color_2);
+        opacity: 0.9;
+    }
+    70% { 
+        box-shadow: 0 0 0 8px var(--secondary-color_2);
+        opacity: 0.7;
+    }
+    100% { 
+        box-shadow: 0 0 0 0 var(--secondary-color_2);
+        opacity: 0.3;
+    }
+  }
 
 /* ------------page info---------------- */
 
 hr{
     border: solid 0.7px var(--secondary-color_2);
     width:30%;
+    margin-top: 50px;
 }
 
 .page_loc{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     line-height: 1em;
     font-size: 1.3em;
     text-align:center;
@@ -364,7 +618,7 @@ hr{
 }
 .bookstore_info{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     line-height: 1.2em;
     font-size: 1.2em;
     text-align:center;
@@ -376,7 +630,7 @@ hr{
 
 .bookstore_nar{
     position: relative;
-    color: var(--secondary-color);
+    color: rgba(var(--secondary-color));
     font-size: 1.2em;
     line-height:1.4em;
     text-align:center;
@@ -440,14 +694,16 @@ hr{
     }
     #landing_h1{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 5em;
         line-height:1.6em;
         left: 8vw;
         top: 10vh;
         z-index:10;
         font-family: var(--font);
-    }
+        letter-spacing: 0.1em;
+        }
+
     header nav{
         position: fixed;
         width: 100%;
@@ -460,7 +716,7 @@ hr{
     }
     .form_title{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 1.4em;
         text-align:center;
         font-family: var(--font);
@@ -469,7 +725,7 @@ hr{
     
     .form_label{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 1.2em;
         text-align:left;
         font-family: var(--font);
@@ -478,8 +734,8 @@ hr{
     }
     .page_des{
         position: relative;
-        color: var(--secondary-color);
-        font-size: 1.3em;
+        color: rgba(var(--secondary-color));
+        font-size: 1.2rem;
         text-align:center;
         width: 100%;
         font-family: var(--font);
@@ -506,12 +762,13 @@ hr{
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top:40px;
-    
+        margin-top:100px;
+
     }
+
     .bookstore_info{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         line-height: 1.2em;
         font-size: 1.2em;
         text-align:center;
@@ -565,7 +822,7 @@ hr{
     }
     #landing_h1{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 3.5em;
         line-height:1.6em;
         left: 8vw;
@@ -592,7 +849,7 @@ hr{
 
     .form_title{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 1.4em;
         text-align:center;
         font-family: var(--font);
@@ -601,7 +858,7 @@ hr{
     
     .form_label{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 1em;
         text-align:left;
         font-family: var(--font);
@@ -610,39 +867,39 @@ hr{
     }
     .page_des{
         position: relative;
-        color: var(--secondary-color);
-        font-size: 1.3em;
+        color: rgba(var(--secondary-color));
+        font-size: 1.2rem;
         line-height: 1.3em;;
         text-align:left;
         width: 100%;
         font-family: var(--font);
         line-height: var(--des-line-height);
         margin: var(--item-margin-v);
-        border-left: 2px var(--secondary-color);
+        border-left: 2px rgba(var(--secondary-color));
     
     }
     .bookstore_nar{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 1.2em;
         line-height:1.4em;
         text-align:left;
         width:100%;
         font-family: var(--font);
         margin: var(--item-margin-v);
-        border-left: 2px var(--secondary-color);
+        border-left: 2px rgba(var(--secondary-color));
     
     }
     .bookstore_info{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         line-height: 1.2em;
         font-size: 1.2em;
         text-align:left;
         width:100%;
         font-family: var(--font);
         margin: var(--item-margin-v);
-        border-left: 2px var(--secondary-color);
+        border-left: 2px rgba(var(--secondary-color));
     
     }
     .book_gallery{
@@ -688,7 +945,7 @@ hr{
 @media screen and (prefers-reduced-motion: reduce) {
     #landing_h1{
         position: relative;
-        color: var(--secondary-color);
+        color: rgba(var(--secondary-color));
         font-size: 8em;
         line-height:1.6em;
         left: 8vw;

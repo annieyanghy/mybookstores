@@ -5,8 +5,7 @@
     <title> Favourite Bookstore </title>
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,21 +14,31 @@
                 <ul>
                     <li ><a class="nav_link" href="filter.html">Bookstores</a> </li>
                     <li ><a class="nav_link" href="#">About</a></li>
-                    <li id="current_page"  class="nav_link"><a  href="#">Home</a></li>
+                    <li  ><a id="current_page" class="nav_link"  href="#">Home</a></li>
                 </ul>
             </nav>
         </header>
     <main id="landing_bg">
+          
         <div id="landing_block">
+                <!-- <div class="v_line"></div> -->
     <a class="no_line" href="#form"><h1 id="landing_h1">Bookstore <br>Collect</h1></a>
     <a class="no_line" href="#form"> <img id="landing_pic" src="img/woman_reading.jpg" alt="woman reading Photo by Pj Accetturo on Unsplash "></a>
-        </div>
+    <a class="no_line" href="#form"> <img id="landing_pic_2" src="img/santorini_bookstore.jpg" alt="Bookstore in Santorini from Atlantis Bookstore "></a>
+
+    <p class="v_text">       2014-2019 collection ✈️ </p>
+
+</div>
     <form id="form" action="https://formspree.io/mlerpygr" method="POST">
         <p class="form_title">Tell me your favourite bookstore</p>
         <label class="form_label" for="name">What is the bookstore called?</label>
         <input class="form_input" type="text" id="name" name="name" placeholder="It's called...">
+        <p class="errormsg" id="nameerrormsg">Please enter the bookstore name 🥺</p>
+        <br>
         <label class="form_label" for="bookstore">Which city is the bookstore located?</label>
         <input class="form_input" type="text" id="bookstore" name="bookstore" placeholder="It is in...">
+        <p class="errormsg" id="addrerrormsg">Please enter where it is 😬</p>
+        <br>
         <label class="form_label" for="subject">Any notes about the bookstore?</label>
         <textarea class="form_input" id="subject" name="subject" placeholder="Write something.." ></textarea>
         <input class="form_label form_button" type="submit" value="Submit">
@@ -39,7 +48,17 @@
 
 </main>
     <footer>
-        <p id="copy">Copyright ©  Hsinyu Yang</p>
+        <p id="copy">Hand-coded with 🖤 by Hsin-yu Yang</p>
+        <div class="social_icons">
+        <a href="https://medium.com/@annieyanghy"><i class= "fa fa-medium"></i></a>
+        <a href="https://dribbble.com/annieyanghy"><i class= "fa fa-dribbble"></i></a>
+        <a href="https://www.linkedin.com/in/hsinyuyang/"><i class= "fa fa-linkedin"></i></a>
+        </div>
+
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src = "js/js.js"></script>
+
+        <script src="https://use.fontawesome.com/d84889ebb7.js"></script>
 </body>
 </html> 
