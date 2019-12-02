@@ -1,3 +1,5 @@
+
+
 // Paris
 
 $('#paris_p').mouseover(function(){
@@ -5,7 +7,9 @@ $('#paris_p').mouseover(function(){
         $('#paris_p .p_title').css('display', 'inline').delay(800).fadeIn(200);
         $('#paris_p .loc').css('opacity', '1').delay(800).fadeIn(100);
         $('#paris_p .p_title').css('opacity', '1').delay(800).fadeIn(100);
-        $('#san_p').removeClass('point');   
+        $('#san_p').removeClass('point');  
+        $('#venice_p').removeClass('point');   
+ 
     });
 
 
@@ -15,6 +19,8 @@ $('#paris_p').mouseleave(function(){
     $('#paris_p .loc').css('opacity', '0').delay(800).fadeIn(100);
     $('#paris_p .p_title').css('opacity', '0').delay(800).fadeIn(100);
     $('#san_p').addClass('point');   
+    $('#venice_p').addClass('point');   
+
 });
 
 // Santorini
@@ -23,6 +29,8 @@ $('#san_p').mouseover(function(){
     $('#san_p .p_title').css('display', 'inline').delay(800).fadeIn(200);
     $('#san_p .loc').css('opacity', '1');
     $('#san_p .p_title').css('opacity', '1');
+    $('#venice_p').removeClass('point');   
+
 });
 
 $('#san_p').mouseleave(function(){
@@ -30,6 +38,8 @@ $('#san_p').mouseleave(function(){
     $('#san_p .p_title').css('display', 'none').delay(800).fadeOut(100);  
     $('#san_p .loc').css('opacity', '0');
     $('#san_p .p_title').css('opacity', '0');
+    $('#venice_p').addClass('point');   
+
 })
 
 
@@ -49,6 +59,55 @@ $('#tw_p').mouseleave(function(){
     $('#tw_p .loc').css('opacity', '0');
     $('#tw_p .p_title').css('opacity', '0');
 })
+
+// Venice
+$('#venice_p').mouseover(function(){
+    $(' #venice_p .loc').css('display', 'inline').delay(800).fadeIn(200);
+    $('#venice_p .p_title').css('display', 'inline').delay(800).fadeIn(200);
+    $('#venice_p .loc').css('opacity', '1');
+    $('#venice_p .p_title').css('opacity', '1');
+});
+
+$('#venice_p').mouseleave(function(){
+    $('#venice_p .loc').css('display', 'none').delay(800).fadeOut(100);
+    $('#venice_p .p_title').css('display', 'none').delay(800).fadeOut(100);  
+    $('#venice_p .loc').css('opacity', '0');
+    $('#venice_p .p_title').css('opacity', '0');
+})
+
+
+// Tokyo
+$('#tokyo_p').mouseover(function(){
+    $(' #tokyo_p .loc').css('display', 'inline').delay(800).fadeIn(200);
+    $('#tokyo_p .p_title').css('display', 'inline').delay(800).fadeIn(200);
+    $('#tokyo_p .loc').css('opacity', '1');
+    $('#tokyo_p .p_title').css('opacity', '1');
+});
+
+$('#tokyo_p').mouseleave(function(){
+    $('#tokyo_p .loc').css('display', 'none').delay(800).fadeOut(100);
+    $('#tokyo_p .p_title').css('display', 'none').delay(800).fadeOut(100);  
+    $('#tokyo_p .loc').css('opacity', '0');
+    $('#tokyo_p .p_title').css('opacity', '0');
+})
+
+
+// London
+$('#london_p').mouseover(function(){
+    $(' #london_p .loc').css('display', 'inline').delay(800).fadeIn(200);
+    $('#london_p .p_title').css('display', 'inline').delay(800).fadeIn(200);
+    $('#london_p .loc').css('opacity', '1');
+    $('#london_p .p_title').css('opacity', '1');
+});
+
+$('#london_p').mouseleave(function(){
+    $('#london_p .loc').css('display', 'none').delay(800).fadeOut(100);
+    $('#london_p .p_title').css('display', 'none').delay(800).fadeOut(100);  
+    $('#london_p .loc').css('opacity', '0');
+    $('#london_p .p_title').css('opacity', '0');
+})
+
+
 
 
 
@@ -89,3 +148,85 @@ if ($('#bookstore').val().length ===0){
     console.log(e);
     });
  })
+
+
+//  Flip card
+// $(document).ready(function(){
+//     $('.card').mouseenter(function(e){
+//         $('#flipcard').addClass('flip');
+//         console.log(e);
+//     });
+//     $('.card').mouseout(function(event){
+//         $('#flipcard').removeClass('flip');
+//         console.log(event);
+//     });
+// })
+   
+   
+
+
+
+// $('.card').mouseover(function(e){
+//     $(this).data('mouseover', true);
+//     console.log(e);
+//   });
+
+//   $('.card').mouseleave(function(e){
+//     $(this).data('mouseleave', true);
+//     console.log(e);
+//   });
+
+  
+
+// if ($('.card').data('mouseover')){
+//     $('#flipcard').addClass('flip');
+// }
+
+  
+
+
+// if ($('.card').data('mouseleave')){
+//     $('#flipcard').removeClass('flip');
+// }
+
+
+
+
+
+// $('.card').click(function(e){
+//     $(this).data('clicked', true);
+//     console.log(e);
+//   });
+
+// if( $('.card').data('clicked')) {
+//     $('#flipcard').addClass('flip');
+//     console.log('ee');
+//     //clicked element, do-some-stuff
+// } else {
+//     $('#flipcard').removeClass('flip');
+//     //run function2
+
+
+
+// Slides
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+    
+
+

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
-    
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 </head>
 <body>
         <header>
@@ -21,7 +21,7 @@
             </header>
 
     <main class="filter-page-main">
-    <h1 class="page_title">Bookstores I have been to</h1>
+    <h1 class="page_title">Bookstores I love</h1>
     <p class="page_des">The following bookstores are hand-picked by me as the most visiting-worth bookstores in the world. 
         I dare to recommend them not only because I have been there, but also because they are rich in history and stories.
     I created<a href="#b_m" > this world map</a> 🗺for the bookstores, or you can also <br> <a href="#b_g"> <i id="down_arrow" class="fa fa-angle-double-down"></i> jump to gallery</a>.</p>
@@ -37,33 +37,66 @@
         </div>
 
         <div id ="tw_p" class="point tw">
-                <p><a class="p_title">📖Eslite Bookstore</a></p>
+                <p><a class="p_title" href="taipei.html">📖Eslite Bookstore</a></p>
                 <p class="loc">📍Taipei, Taiwan </p>
             </div>
-        <!-- <div class="point london"></div> -->
+
+        <div id ="venice_p" class="point venice">
+                <p><a class="p_title" href="venice.html">📖Alta Acqua Libreria</a></p>
+                <p class="loc">📍Venice, Italy </p>
+            </div>
+
+        <div id ="tokyo_p" class="point tokyo">
+                <p><a class="p_title" href="tokyo.html">📖Tsutaya Bookstore</a></p>
+                <p class="loc">📍Tokyo, Japen </p>
+            </div>
+
+        
+        <div id ="london_p" class="point london">
+                <p><a class="p_title" href="london.html">📖Nottinghill Travel Bookshop</a></p>
+                <p class="loc">📍London, UK </p>
+            </div>
 
     </div>
     <hr>
+    <h2 id="b_g" class="gallery_title"> Bookstore Gallery</h2>
     <div class="gallery">
-        <h2 id="b_g" class="gallery_title"> Bookstore Gallery</h2>
-        <a  class="gallery_image"href="paris.html">
-                <p class="bookstore_nar_filter">Paris</p>
-            <img class="filter_image" src="img/paris_bookstore.jpg" alt="Shakespear and Company">
-       
-        </a>
+        
+
+        <a  class="gallery_image" href="paris.html">
+            <p class="bookstore_nar_filter">Paris</p>
+        <img  class="filter_image" src="img/paris_bookstore.jpg" alt="Shakespear and Company">
+    </a>  
         <a  class="gallery_image" href="santorini.html">
                 <p class="bookstore_nar_filter">Santorini</p>
             <img  class="filter_image" src="img/at/at_writing.jpg" alt="Atlantis Bookstore">
-            
+        </a>  
+        <a class="gallery_image" href="venice.html">
+            <p class="bookstore_nar_filter">Venice</p>
+            <img class="filter_image" src="img/alta_acqua_libreria.jpg" alt="Alta Acqua Bookstore">
         </a>
-        <a class="gallery_image">
+
+        <a class="gallery_image" href="taipei.html">
+            <p class="bookstore_nar_filter">Taipei</p>
+            <img class="filter_image" src="img/eslite_2.jpg" alt="Taipei Eslite Bookstore">
+        </a>
+        
+        </a>
+        <a class="gallery_image" href="london.html">
                 <p class="bookstore_nar_filter">London</p>
                 <img class="filter_image" src="img/london_nottinghill.jpg" alt="Notting Hill Travel Bookstore">
             </a>
+
+            <a class="gallery_image" href="tokyo.html">
+                <p class="bookstore_nar_filter">Tokyo</p>
+                <img class="filter_image" src="img/tsutaya_2.jpg" alt="Tsutaya Bookstore">
+            </a>
+
+            
     </div>
     </main>
     <footer>
-            <p id="copy">Hand-coded with 🖤 by Hsin-yu Yang</p>            
+            <p id="copy">Hand-coded with ♥︎ by Hsin-yu Yang</p>            
             <div class="social_icons">
             <a href="https://medium.com/@annieyanghy"><i class= "fa fa-medium"></i></a>
             <a href="https://dribbble.com/annieyanghy"><i class= "fa fa-dribbble"></i></a>
@@ -73,8 +106,10 @@
     </footer>
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@5"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src = "js/js.js"></script>
     <script src="https://use.fontawesome.com/d84889ebb7.js"></script>
+    <script src="js/mixitup.min.js"></script>
+ 
 </body>
 </html> 

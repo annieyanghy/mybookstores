@@ -2,8 +2,8 @@
 
 :root{
     --primary-color: 240, 231, 229;
-    --secondary-color: 78, 70, 70;
-    --third-color: 176, 111, 94;
+    --secondary-color: 0, 0, 0;
+    --third-color: 0, 0, 0;
     --secondary-color_2: rgba(131, 119, 117, 0.5);
     --font: 'Playfair Display', serif;
     --header-footer-gap: 20px;
@@ -154,6 +154,7 @@ main{
     grid-column: 1/2;
     font-size: 8em;
     line-height:1.6em;
+    font-weight: 900;
     left: 8vw;
     top: 10vh;
     z-index:10;
@@ -166,7 +167,7 @@ main{
 
 @keyframes color_change{
     from {color: rgba(var(--secondary-color));}
-    to {color: rgba(var(--third-color));}
+    to {color: var(--secondary-color_2);}
 }
 
 
@@ -235,6 +236,11 @@ main{
 
 } */
 
+#about{
+    grid-row:3/4;
+    margin: auto;
+}
+
 
 /* ------------contact form---------------- */
 form{
@@ -242,7 +248,10 @@ form{
     display: flex;
     flex-direction: column;
     margin: 100px auto;
-    width: 500px;}
+    width: 500px;
+    grid-row: 2/3;
+
+}
 
 .form_title{
     position: relative;
@@ -363,17 +372,17 @@ footer a{
 }
 .gallery{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-top:100px;
 
 }
 
 .book_gallery{
     display: flex;
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -388,8 +397,9 @@ footer a{
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    margin: 8vh;
+    margin: 10px auto;
     text-decoration: none;
+    width: 50%;
 }
 
 
@@ -400,13 +410,14 @@ footer a{
     margin: 3vh;
     /* padding: 0 2vh; */
     outline: 2px solid;
-    outline-offset: 3px;
+    outline-offset: 5px;
   
 
 }
 .filter_image:hover{
     box-shadow: 20px 20px  var(--secondary-color_2);
     transition: 0.5s;
+    /* transform: rotateY(180deg); */
 }
 
 .page_title{
@@ -436,6 +447,7 @@ footer a{
     color: rgba(var(--primary-color));
     font-size: var(--button-font);
     font-weight: 600;
+    width: auto;
     text-align:center;
     font-family: var(--font);
     line-height: var(--p-line-height);
@@ -484,6 +496,14 @@ footer a{
 .highlight{
     background: var(--secondary-color_2);
 }
+
+/* ----flip--- */
+
+
+
+
+
+
 /* ----world map--- */
 
 #map_block{
@@ -506,8 +526,8 @@ footer a{
 .point{
     cursor: pointer;
     position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.4rem;
+    height: 0.4rem;
     background-color:  rgba(var(--secondary-color));
     opacity: 1;
     border-radius: 100%;
@@ -533,15 +553,8 @@ footer a{
 }
 
 
-
-.paris{
-    display:grid;
-    top: 26%;
-    left:48%;
-    align-self: center;
-}
 .p_title{
-    margin-top: 0.2rem;
+    /* margin-top: 0.2rem; */
     font-size: 0.4rem;
     opacity: 0;
     color: rgba(var(--primary-color));
@@ -569,10 +582,18 @@ footer a{
     transition: 0.5s;
 
 }
+
+.paris{
+    display:grid;
+    top: 26%;
+    left:48%;
+    align-self: center;
+}
+
 .santorini{
     display:grid;
-    top: 30%;
-    left:51%;
+    top: 32%;
+    left:52%;
 }
 
 .tw{
@@ -581,6 +602,32 @@ footer a{
     left:71.3%;
 
 }
+
+.venice{
+    display:grid;
+    top: 27%;
+    left:50%;
+
+}
+
+.tokyo{
+    display:grid;
+    top: 34%;
+    left:74%;
+
+}
+
+.london{
+    display:grid;
+    top: 21%;
+    left:47%;
+
+}
+
+
+
+
+
 
 @keyframes pulse {
     0% { 
@@ -779,6 +826,7 @@ hr{
     }
     .book_gallery{
         display: flex;
+        position: relative;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -799,6 +847,49 @@ hr{
         width: 60%;
     }
 
+}
+
+
+/*--- slides ---*/
+.slideshow{
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.slides{
+    display:none;
+    width: auto;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide-left{
+    display: inline-block;
+    position: relative;
+    left: 0%;
+    top: 50%;
+    background: rgba(var(--secondary-color), 0.1);
+    padding: 10px 16px;
+    align-self: center;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.slide-right{
+    display: inline-block;
+    position: relative;
+    right: 0%;
+    top: 50%;
+    background: rgba(var(--secondary-color), 0.1);
+    padding: 10px 16px;
+    align-self: center;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
 }
 
   /* ------------mobile---------------- */
@@ -904,6 +995,7 @@ hr{
     }
     .book_gallery{
         display: flex;
+        position: relative;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
