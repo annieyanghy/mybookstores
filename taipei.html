@@ -21,13 +21,12 @@
     <h1 class="page_title">Eslite Bookstore</h1>
     <p class="page_loc">📍Taipei, Taiwan</p>
 
-    <p class="page_des">Eslite Bookstore is the largest bookstore brand in Taiwan. It is now a fusion place for multiple cultural purposes -- galleries, artsy films, bookstores, cafés, etc.
+    <p class="page_des">I basically spent most of my childhood in the Eslite bookstores devouring tons of books. Eslite Bookstore is the largest bookstore brand in Taiwan. It is now a fusion place for multiple cultural purposes -- galleries, artsy films, bookstores, cafés, etc.
             Now, Eslite forms a cultural value chain, and a platform for reading and cultural exchange.
     </p>
     <div class="bookstore_info">
     <p>Where: HQ in Taipei, chain stores in Taichung, Hualien, Hong Kong, Tokyo etc.</p>
-    <br>
-    <a href="https://www.eslitecorp.com/eslite/index.jsp?site_id=eslite_en">Official Website</a> 
+    <button class="web_button" type="button" onclick="window.location.href = 'https://www.eslitecorp.com/eslite/index.jsp?site_id=eslite_en';"  > Website</button>
   
     </div>
     <hr>
@@ -58,8 +57,28 @@
         <a href="https://www.linkedin.com/in/hsinyuyang/"><i class= "fa fa-linkedin"></i></a>
         </div>
         </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-    <script src = "js/js.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    
     <script src="https://use.fontawesome.com/d84889ebb7.js"></script>
+    <script src = "js/js.js"></script>
+    <script>
+    var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+    </script>
 </body>
 </html>

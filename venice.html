@@ -21,15 +21,15 @@
     <h1 class="page_title">Alta Acqua Libreria</h1>
     <p class="page_loc">📍Venice, Italy</p>
 
-    <p class="page_des">Situated on Santorini, Greece, Atlantis Bookstore is definitely one of the most special bookstores I have ever been to. </p>
+    <p class="page_des">It is a little bookstore on the Venice water, just right beside the canal. I found it by accident after lunch. It caught my eyes by its boxes of paintings and postcards in the front door, then as I waled in, I realized it's an old tiny bookshop with stories.</p>
     <div class="bookstore_info">
     <p>Address: Calle Lunga Santa Maria Formosa, 5176b, 30122 Venezia VE, Italy</p>
-    <a href="http://libreriaacquaaltavenezia.myadj.it/v/libreriaacquaaltavenezia">Official Website</a>
     <p>Telephone:+39 041 296 0841 </p>
+    <button class="web_button" type="button" onclick="window.location.href = 'http://libreriaacquaaltavenezia.myadj.it/v/libreriaacquaaltavenezia';"  > Website</button>
     </div>
     <hr>
     <div class="bookstore_nar">
-    <p>It is a little bookstore on the Venice water, just right beside the canal.</p>
+    <!-- <p>It is a little bookstore on the Venice water, just right beside the canal.</p> -->
     <p class="img_credit">All are photographed by me.</p>
 
     </div>
@@ -56,8 +56,29 @@
         <a href="https://www.linkedin.com/in/hsinyuyang/"><i class= "fa fa-linkedin"></i></a>
         </div>
         </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-    <script src = "js/js.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    
     <script src="https://use.fontawesome.com/d84889ebb7.js"></script>
+    <script src = "js/js.js"></script>
+    <script>
+        var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("slides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+        </script>
 </body>
 </html>

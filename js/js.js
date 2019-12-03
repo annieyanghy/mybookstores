@@ -149,6 +149,21 @@ if ($('#bookstore').val().length ===0){
     });
  })
 
+//  Filter button
+$('.filter_button').click(function(e){
+    $(this).addClass('active_button');
+    $('.default').removeClass('active_button');
+
+    console.log(e);
+  
+})
+
+$('.filter_button').mouseout(function(e){
+    $(this).removeClass('active_button');
+    console.log(e);
+})
+
+
 
 //  Flip card
 // $(document).ready(function(){
@@ -209,24 +224,31 @@ if ($('#bookstore').val().length ===0){
 
 
 // Slides
-var slideIndex = 1;
-showDivs(slideIndex);
+// $(".slideshow").hide();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+// setInterval(function() {
+//   $('.slideshow')
+//     .fadeOut(1000)
+//     .next()
+//     .fadeIn(1000)
+//     .end()
+//     .appendTo('.slideshow');
+// }, 3000);
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
+// var slideIndex = 1;
+// showDivs(slideIndex);
 
-    
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
 
+// function showDivs(n) {
 
+  
+//   if (n > $("slides").length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = $("slides").length}
+  
+//     $("slides").attr('display','none');  
+  
+//   $("slides").attr('display','block');  
+// }

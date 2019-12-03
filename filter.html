@@ -59,39 +59,54 @@
 
     </div>
     <hr>
+    
     <h2 id="b_g" class="gallery_title"> Bookstore Gallery</h2>
-    <div class="gallery">
+    <div class="button_container">
+        <button class="filter_button active_button default" type="button" data-filter="all">All</button>
+        <button class="filter_button " type="button" data-filter=".eu">Europe</button>
+        <button class="filter_button " type="button" data-filter=".as">Asia</button>
+        </div>
+    <div class="gallery" >
         
-
-        <a  class="gallery_image" href="paris.html">
+        <div class="mix eu">
+        <a  class="gallery_image " href="paris.html">
             <p class="bookstore_nar_filter">Paris</p>
-        <img  class="filter_image" src="img/paris_bookstore.jpg" alt="Shakespear and Company">
+        <img  class="filter_image" src="img/sp_front.jpg" alt="Shakespear and Company">
     </a>  
-        <a  class="gallery_image" href="santorini.html">
+        </div>
+
+        <div  class="mix as">
+            <a class="gallery_image " href="taipei.html">
+                <p class="bookstore_nar_filter">Taipei</p>
+                <img class="filter_image" src="img/eslite_2.jpg" alt="Taipei Eslite Bookstore">
+            </a>
+            </div>
+        <div  class="mix eu">
+        <a  class="gallery_image " href="santorini.html">
                 <p class="bookstore_nar_filter">Santorini</p>
             <img  class="filter_image" src="img/at/at_writing.jpg" alt="Atlantis Bookstore">
         </a>  
-        <a class="gallery_image" href="venice.html">
+    </div>
+    <div  class="mix eu">
+        <a class="gallery_image " href="venice.html">
             <p class="bookstore_nar_filter">Venice</p>
             <img class="filter_image" src="img/alta_acqua_libreria.jpg" alt="Alta Acqua Bookstore">
         </a>
-
-        <a class="gallery_image" href="taipei.html">
-            <p class="bookstore_nar_filter">Taipei</p>
-            <img class="filter_image" src="img/eslite_2.jpg" alt="Taipei Eslite Bookstore">
+    </div>
+    
         </a>
-        
-        </a>
-        <a class="gallery_image" href="london.html">
+        <div  class="mix eu">
+        <a class="gallery_image " href="london.html">
                 <p class="bookstore_nar_filter">London</p>
                 <img class="filter_image" src="img/london_nottinghill.jpg" alt="Notting Hill Travel Bookstore">
             </a>
-
-            <a class="gallery_image" href="tokyo.html">
+    </div>
+<div  class="mix as">
+            <a class="gallery_image " href="tokyo.html">
                 <p class="bookstore_nar_filter">Tokyo</p>
                 <img class="filter_image" src="img/tsutaya_2.jpg" alt="Tsutaya Bookstore">
             </a>
-
+</div>
             
     </div>
     </main>
@@ -106,10 +121,14 @@
     </footer>
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@5"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-    <script src = "js/js.js"></script>
     <script src="https://use.fontawesome.com/d84889ebb7.js"></script>
-    <script src="js/mixitup.min.js"></script>
- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src = "js/jquery-3.4.1.min.js"></script>
+    <script src = "js/mixitup.min.js"></script>
+    <script src = "js/js.js"></script>
+    <script>
+     var containerEl = document.querySelector('.gallery');
+    var mixer = mixitup(containerEl);
+    </script>
 </body>
 </html> 
